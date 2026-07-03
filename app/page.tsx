@@ -1217,7 +1217,7 @@ export default function Home() {
                 marginTop: 4,
               }}
             >
-              HAS ARRIVED
+              
             </span>
           </motion.h1>
           <motion.div
@@ -2222,19 +2222,7 @@ export default function Home() {
         >
           © 2025 <span style={{ color: "#22b5b8" }}>Saurabh Singh Yadav</span>
         </span>
-        <span
-          style={{
-            fontFamily: mono,
-            fontSize: ".48rem",
-            letterSpacing: 2,
-            color: "rgba(209,232,226,.2)",
-            textTransform: "uppercase",
-            width: isMobile ? "100%" : "auto",
-          }}
-        >
-          Built with <span style={{ color: "#D9B08C" }}>Next.js</span> · Resend
-          · Framer Motion
-        </span>
+  
         <span
           style={{
             fontFamily: mono,
