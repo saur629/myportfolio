@@ -12,8 +12,11 @@
 }
 *{box-sizing:border-box;padding:0;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--dark);color:var(--white);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;cursor:none}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--dark)}::-webkit-scrollbar-thumb{background:var(--teal)}
+body{background:var(--dark);color:var(--white);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+@media(min-width:769px){body{cursor:none}}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:var(--teal)}
 
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
@@ -22,6 +25,9 @@ body{background:var(--dark);color:var(--white);font-family:'Space Grotesk',sans-
 @keyframes rayShoot{0%{opacity:0;width:0}40%{opacity:.9;width:160px}70%{opacity:.4;width:220px}100%{opacity:0;width:0}}
 @keyframes glowPulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
 @keyframes lineBreath{0%,100%{width:60px;opacity:1}50%{width:30px;opacity:.4}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
 .anim-blink{animation:blink 2s infinite}
 .anim-glow{animation:glowPulse 4s ease-in-out infinite}
@@ -30,4 +36,17 @@ body{background:var(--dark);color:var(--white);font-family:'Space Grotesk',sans-
 .anim-ray{animation:rayShoot 3s ease-in-out infinite}
 .anim-line{animation:lineBreath 2s ease-in-out infinite}
 
-@keyframes spin{to{transform:rotate(360deg)}}
+/* Mobile menu overlay */
+.mobile-menu{
+  position:fixed;inset:0;z-index:150;
+  background:rgba(10,15,14,.98);
+  backdrop-filter:blur(24px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;
+  animation:fadeIn .25s ease;
+}
+.mobile-menu a{
+  font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;text-decoration:none;color:#e8f4f2;
+  transition:color .2s;
+}
+.mobile-menu a:hover{color:#22b5b8}
